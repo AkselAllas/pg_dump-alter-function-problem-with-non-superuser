@@ -1,3 +1,4 @@
+To reproduce:
 * Run docker-compose up
 * Run commands from `command.md`
 
