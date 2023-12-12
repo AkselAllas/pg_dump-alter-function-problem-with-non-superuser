@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+  postgres14:
+    image: postgres:14.10
+    container_name: postgres14
+    environment:
+      POSTGRES_USER: replicator
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: test
+    ports:
+      - "7432:5432"
+    networks:
+      - postgres-network
+
+  postgres15:
+    image: postgres:15.5
+    container_name: postgres15
+    environment:
+      POSTGRES_USER: replicator
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: test
+    ports:
+      - "9432:5432"  
+    networks:
+      - postgres-network
+
+networks:
+  postgres-network:
+    driver: bridge
