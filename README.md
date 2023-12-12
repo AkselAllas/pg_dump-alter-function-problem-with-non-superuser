@@ -1,3 +1,7 @@
+When making a dump from PostgreSQL 14 and using it in PostgreSQL 15 with a user that has no superuser access, then we run into the following line from https://www.postgresql.org/docs/15/sql-alterfunction.html
+
+> To alter the owner, you must also be a direct or indirect member of the new owning role, and that role must have CREATE privilege on the function's schema.
+
 To reproduce:
 * Run docker-compose up
 * Run commands from `command.md`
